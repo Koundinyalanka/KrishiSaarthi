@@ -498,4 +498,98 @@ def GetNotificationData(FarmerID):
 
 
 
+class Insights(object):
+    Farmer_Labour_Average = 0   
+    Farmer_Material_Average = 0   
+    Farmer_Utilities_Average = 0
+    
+    Labour_Average = 0
+    Material_Average = 0
+    Utilities_Average = 0
+
+    
+    def __init__(self, Farmer_Labour_Average,  Farmer_Material_Average,  Farmer_Utilities_Average, Labour_Average, Material_Average, Utilities_Average):
+        
+        self.Farmer_Labour_Average = Farmer_Labour_Average
+        self.Farmer_Material_Average = Farmer_Material_Average
+        self.Farmer_Utilities_Average = Farmer_Utilities_Average
+        
+        self.Labour_Average = Labour_Average 
+        self.Material_Average = Material_Average
+        self.Utilities_Average = Utilities_Average
+    
+    def __str__(self):
+        return (str(self.__dict__))
+
+
+def CraeteInsightsObject(Notification_Object):
+    if (Notification_Object[0] is None):
+        Farmer_Labour_Average = 0
+    else:
+        Farmer_Labour_Average =  float(Notification_Object[0])
+        
+    print (Notification_Object[1])
+    if (Notification_Object[1] is None):
+        Farmer_Material_Average = 0
+    else:
+        Farmer_Material_Average =  float(Notification_Object[1] )
+        
+    if (Notification_Object[2] is None):
+        Farmer_Utilities_Average = 0
+    else:
+        Farmer_Utilities_Average =  float(Notification_Object[2])
+        
+    if (Notification_Object[3] is None):
+        Labour_Average = 0
+    else:
+        Labour_Average =  float(Notification_Object[3] )
+    
+    if (Notification_Object[4] is None):
+        Material_Average = 0
+    else:
+        Material_Average =  float(Notification_Object[4])
+        
+    if (Notification_Object[5] is None):
+        Utilities_Average = 0
+    else:
+        Utilities_Average =  float(Notification_Object[5])
+    
+        
+    new_Insights_Object = Insights(Farmer_Labour_Average,  Farmer_Material_Average,  Farmer_Utilities_Average, Labour_Average, Material_Average, Utilities_Average)
+    
+    return new_Insights_Object
+
+
+
+
+def GetFarmerInsights(FarmerID):
+    
+    sql_Query='''
+    select 
+            (select AVG(Amount) from Finance where FarmerID = '''+ str(FarmerID) +''' and Type = 'Labour' and IsExpense = 1 ) as 'Farmer_Labour_Average', 
+            (select AVG(Amount) from Finance where FarmerID = '''+ str(FarmerID) +''' and Type = 'Material' and IsExpense = 1 ) as 'Farmer_Material_Average',
+            (select AVG(Amount) from Finance where FarmerID = '''+ str(FarmerID) +''' and Type = 'Utilities' and IsExpense = 1 ) as 'Farmer_Utilities_Average',
+            (select AVG(Amount) from Finance where Type = 'Labour' and IsExpense = 1 ) as 'Labour_Average',
+            (select AVG(Amount) from Finance where Type = 'Material' and IsExpense = 1 ) as 'Material_Average',
+            (select AVG(Amount) from Finance where Type = 'Utilities' and IsExpense = 1 ) as 'Utilities_Average';
+          '''
+#     print (sql_Query)
+    
+    insights_Row_data = (RUN_Select_Query(sql_Query));
+#     print (insights_Row_data)
+    list_Insights_Data = []
+    
+    for row in insights_Row_data:
+#         print (row)
+        list_Insights_Data.append(CraeteInsightsObject(row));
+    
+#     print (json.dumps(list_Notification_Data, default=lambda o: o.__dict__))
+    
+    return (json.dumps(list_Insights_Data, default=lambda o: o.__dict__))
+  
+
+
+
+
+
     

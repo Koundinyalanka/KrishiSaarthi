@@ -123,6 +123,16 @@ def do_upload():
     print(json_String)
     return fp.GetNotificationData((json_String))
 
+##def GetFarmerInsights(FarmerID):
+@route('/GetFarmerInsights', method='POST')
+def do_upload():
+    bottle.BaseRequest.MEMFILE_MAX = 1024 * 10240
+    json_String = request.json.get('FarmerID')
+    print(json_String)
+    return fp.GetFarmerInsights((json_String))
+
+
+
 
 
 @route('/index.html', method='POST')
