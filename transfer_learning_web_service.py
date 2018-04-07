@@ -100,6 +100,28 @@ def do_upload():
     print(json_String)
     return fp.AddFinance(json.dumps(json_String))
 
+@route('/GetFinanceData', method='POST')
+def do_upload():
+    bottle.BaseRequest.MEMFILE_MAX = 1024 * 10240
+    json_String = request.json.get('FarmerID')
+    print(json_String)
+    return fp.GetFinanceData(json.dumps(json_String))
+
+##AddNotification(json_String)
+@route('/AddNotification', method='POST')
+def do_upload():
+    bottle.BaseRequest.MEMFILE_MAX = 1024 * 10240
+    json_String = request.json.get('string_Json_Data')
+    print(json_String)
+    return fp.AddNotification(json.dumps(json_String))
+
+##def GetNotificationData(FarmerID):
+@route('/GetNotificationData', method='POST')
+def do_upload():
+    bottle.BaseRequest.MEMFILE_MAX = 1024 * 10240
+    json_String = request.json.get('FarmerID')
+    print(json_String)
+    return fp.GetNotificationData((json_String))
 
 
 
