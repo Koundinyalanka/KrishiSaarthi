@@ -1,0 +1,5 @@
+healthy apple plant
+diseased rust
+diseased apple scab
+diseased fireblight
+diseased powdery mildew
