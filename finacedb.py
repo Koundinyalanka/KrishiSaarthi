@@ -7,6 +7,7 @@ import ast
 import datetime
 import os
 import mysql.connector
+import math
 
 
 connection = 0;
@@ -220,10 +221,22 @@ def AddIncomeSell(json_String):
 def AddFinance(json_String):
     
     json_Object = json.loads(json_String)
-    Date = "CAST('"+str(json_Object["CurrentDate"]) + "' AS DATETIME)" ;               
+    Date = "CAST('"+str(json_Object["CurrentDate"]) + "' AS DATETIME)" ;
+
+
+    if ( ("SubType" not in json_String) or (json_Object["SubType"] is None) or (json_Object["SubType"] == '')):
+        SubType = 'NULL'
+    else:
+        SubType = "'"+json_Object["SubType"]+"'"
+
+    if (  ("JobType" not in json_String) or (json_Object["JobType"] is None) or (json_Object["JobType"] == '')):
+        JobType = 'NULL'
+    else:
+        JobType = "'"+json_Object["JobType"]+"'"
+    
     #print (Date)
     
-    sql_Query = "insert into Finance (FarmerID, IsExpense, Type, SubType, JobType, Amount, Comment, CurrentDate)  values (%d,%d,%s,%s,%s,%d,%s,%s); " % (int(json_Object["FarmerID"]),int(json_Object["IsExpense"]),"'"+json_Object["Type"]+"'","'"+json_Object["SubType"]+"'","'"+json_Object["JobType"]+"'",int(json_Object["Amount"]),"'"+json_Object["Comment"]+"'",Date);
+    sql_Query = "insert into Finance (FarmerID, IsExpense, Type, SubType, JobType, Amount, Comment, CurrentDate)  values (%d,%d,%s,%s,%s,%d,%s,%s); " % (int(json_Object["FarmerID"]),int(json_Object["IsExpense"]),"'"+json_Object["Type"]+"'",SubType,JobType,int(json_Object["Amount"]),"'"+json_Object["Comment"]+"'",Date);
     #print (sql_Query)
     Run_Insert_Query(sql_Query);
 
