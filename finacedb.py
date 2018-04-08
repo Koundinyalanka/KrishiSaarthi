@@ -523,12 +523,15 @@ class Insights(object):
 
 
 def CraeteInsightsObject(Notification_Object):
+    
     if (Notification_Object[0] is None):
         Farmer_Labour_Average = 0
     else:
         Farmer_Labour_Average =  float(Notification_Object[0])
+
+    #print(Farmer_Labour_Average)
         
-    print (Notification_Object[1])
+    #print (Notification_Object[1])
     if (Notification_Object[1] is None):
         Farmer_Material_Average = 0
     else:
@@ -543,6 +546,8 @@ def CraeteInsightsObject(Notification_Object):
         Labour_Average = 0
     else:
         Labour_Average =  float(Notification_Object[3] )
+
+    #print(Farmer_Labour_Average)
     
     if (Notification_Object[4] is None):
         Material_Average = 0
@@ -556,6 +561,8 @@ def CraeteInsightsObject(Notification_Object):
     
         
     new_Insights_Object = Insights(Farmer_Labour_Average,  Farmer_Material_Average,  Farmer_Utilities_Average, Labour_Average, Material_Average, Utilities_Average)
+
+    #print (new_Insights_Object)
     
     return new_Insights_Object
 
@@ -573,10 +580,10 @@ def GetFarmerInsights(FarmerID):
             (select AVG(Amount) from Finance where Type = 'Material' and IsExpense = 1 ) as 'Material_Average',
             (select AVG(Amount) from Finance where Type = 'Utilities' and IsExpense = 1 ) as 'Utilities_Average';
           '''
-#     print (sql_Query)
+    #print (sql_Query)
     
     insights_Row_data = (RUN_Select_Query(sql_Query));
-#     print (insights_Row_data)
+    #print (insights_Row_data)
     list_Insights_Data = []
     
     for row in insights_Row_data:
