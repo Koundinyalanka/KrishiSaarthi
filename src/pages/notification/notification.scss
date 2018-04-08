@@ -1,0 +1,20 @@
+page-notification {
+
+    .header{
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    list-row{
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .name{
+        text-decoration: underline;
+        font-size: 16px;
+        padding-left: 10px;
+        color: $redColor;
+    }
+
+}

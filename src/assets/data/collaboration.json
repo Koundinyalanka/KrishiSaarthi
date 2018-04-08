@@ -1,0 +1,68 @@
+[
+    {
+                    "Farmer_ID": "MH43000001",
+                    "Name": "Ravindra Shinde",
+                    "ContactNumber": "9619152620",
+                    "OwnFarm": "Y",
+                    "lat": 19.5021,
+                    "lng": 77.1197,
+                    "AreaField-1": "35",
+                    "Crop1": "Jowar",
+                    "Crop1Disease": "N"
+    },
+    {
+                    "Farmer_ID": "MH43000001",
+                    "Name": "Kanchan Shinde",
+                    "ContactNumber": "9820590636",
+                    "OwnFarm": "Y",
+                    "lat": 19.5781,
+                    "lng": 77.1025,
+                    "AreaField-1": "76",
+                    "Crop1": "Jowar",
+                    "Crop1Disease": "N"
+    },
+    {
+                    "Farmer_ID": "MH12000130",
+                    "Name": "Dipak Kathekar",
+                    "ContactNumber": "9769649218",
+                    "OwnFarm": "N",
+                    "lat": 19.2203,
+                    "lng": 76.6001,
+                    "AreaField-1": "12",
+                    "Crop1": "cotton",
+                    "Crop1Disease": "Y"
+    },
+    {
+                    "Farmer_ID": "MH12000112",
+                    "Name": "Ajit Patil",
+                    "ContactNumber": "9769649218",
+                    "OwnFarm": "Y",
+                    "lat": 19.2809,
+                    "lng": 76.7609,
+                    "AreaField-1": "9",
+                    "Crop1": "cotton",
+                    "Crop1Disease": "N"
+    },
+    {
+                    "Farmer_ID": "MH12000356",
+                    "Name": "Dipali Kadam",
+                    "ContactNumber": "9619152620",
+                    "OwnFarm": "Y",
+                    "lat": 19.2004,
+                    "lng": 76.1087,
+                    "AreaField-1": "52",
+                    "Crop1": "Jowar",
+                    "Crop1Disease": "N"
+    },
+    {
+                    "Farmer_ID": "MH12000204",
+                    "Name": "Janaki Bagul",
+                    "ContactNumber": "9619152620",
+                    "OwnFarm": "Y",
+                    "lat": 19.2644,
+                    "lng": 76.6413,
+                    "AreaField-1": "23",
+                    "Crop1": "cotton",
+                    "Crop1Disease": "N"
+    }
+]

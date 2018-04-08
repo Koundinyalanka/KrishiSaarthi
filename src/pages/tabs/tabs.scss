@@ -1,0 +1,25 @@
+page-tabs {
+    ion-tabs{
+        .tab-button{
+            &:nth-child(3){
+                position: relative;
+                bottom: 30px;
+                ion-icon{
+                    color: $greenColor !important;
+                    background: #fff;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50px;
+                }
+            }
+        }
+
+        .ion-md-notifications:before{
+            position: relative;
+            top: 10px;
+            font-size: 28px;
+        }
+        
+    }
+
+}

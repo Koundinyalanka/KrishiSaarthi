@@ -1,0 +1,54 @@
+<ion-content>
+  <ion-row class="header">
+    <ion-col [ngClass]="{'active': selectedTab == data}" *ngFor="let data of tabsArray" (click)="loadTypes(data)">
+      <span>{{data}}</span>
+    </ion-col>
+  </ion-row>
+  <ion-row class="type">
+    <ion-col *ngFor="let data of types" [ngClass]="{'active': selectedType == data}" (click)="setType(data)">
+      <div>
+        <img src="assets/imgs/financial/{{data}}.png" alt="">
+      </div>
+      <div>
+        <span>{{data}}</span>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="jobType">
+      <ion-col *ngFor="let data of jobType" [ngClass]="{'active': selectedjobType == data}" (click)="setjobType(data)">
+        <div>
+          <img src="assets/imgs/financial/{{data}}.png" alt="">
+        </div>
+        <div>
+          <span>{{data}}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  <ion-row class="datePicker">
+    <ion-col col-12>
+      <ion-item>
+        <ion-label color="greenColor" floating>No Of Resources</ion-label>
+        <ion-input type="number" [(ngModel)]="noResource"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-12>
+        <ion-item>
+          <ion-label>Start Date</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="startDate"></ion-datetime>
+        </ion-item>
+    </ion-col>
+    <ion-col col-12>
+        <ion-item>
+          <ion-label>End Date</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="endDate"></ion-datetime>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row class="done">
+    <ion-col>
+      <button ion-button color="greenColor" (click)="done()">Done!</button>
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

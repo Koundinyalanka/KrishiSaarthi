@@ -1,0 +1,52 @@
+page-weather {
+    ion-content{
+        background-image: url('../assets/imgs/weather/weather.png');
+    }
+    .weather-header{
+        text-align: center;
+        margin-bottom: 20px;
+        ion-col{
+            &:nth-child(1){
+                font-size: 20px;
+            }
+            &:nth-child(2){
+                font-size: 12px;
+            }
+            &:nth-child(3){
+                font-size: 60px;
+            }
+        }
+    }
+    .weather-body{
+        text-align: center;
+        font-size: 16px;
+        ion-icon{
+            font-size: 30px;
+        }
+        .sunny{
+            color: #FCD440;
+        }
+        .mostlyCloudy{
+            color: #C1BEBA;
+        }
+        .thunderstorm{
+            color: #777B88;
+        }
+    }
+
+    .footer{
+        text-align: center;
+        margin-top: 20px;
+        .name{
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 5px;
+        }
+        ion-row{
+            &:nth-child(2){
+                margin-top: 20px;
+            }
+        }
+    }
+
+}

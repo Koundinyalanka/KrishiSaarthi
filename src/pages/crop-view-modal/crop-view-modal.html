@@ -1,0 +1,29 @@
+<ion-content>
+    <ion-row class="selectedImage">
+        <ion-col>
+          <img [src]="'data:image/jpeg;base64,'+cropImage" *ngIf="cropImage"/>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let data of cropList" class="list">
+        <ion-col class="name"><span>{{data.label}}</span></ion-col>
+        <ion-col>{{data.probability}}</ion-col>
+    </ion-row>
+    <ion-row class="reccom">
+      <ion-col>
+        <button ion-button (click)="loadReccomm()" color="{{isHealthy}}">Show Reccomendation</button>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+        <ion-col col-12>{{categoyTitle}}</ion-col>
+        <ion-col col-12>{{categorySubtitle}}</ion-col>
+        <ion-col col-12>{{categoryContent}}</ion-col>
+    </ion-row>
+
+    <ion-fab bottom right edge>
+        <button ion-fab color="{{isHealthy}}">
+          <ion-icon name="md-share"></ion-icon>
+        </button>
+    </ion-fab>
+
+</ion-content>

@@ -1,0 +1,70 @@
+page-find-resource {
+    .header{
+        min-height: 50px;
+        ion-col{
+            text-align: center;
+            font-size: 18px;
+            border-bottom: 1px solid $greenColor;
+            span{
+                position: relative;
+                top: 7px;
+            }
+            &.active{
+                background: $greenColor;
+                color: #fff;
+            }
+        }
+    }
+
+    .jobType{
+        text-align: center;
+        margin-top: 30px;
+        ion-col{
+            &::first-letter{
+                text-transform: uppercase;
+            }
+            span{
+                position: relative;
+                top: 10px;
+            }
+            &.active{
+                span{
+                    font-size: 16px;
+                    color: $greenColor;
+                    border-bottom: 1px solid $greenColor;
+                }
+            }
+            img{
+                height: 50px;
+            }
+        }
+    }
+
+    .type{
+        text-align: center;
+        img{
+            height: 100px;
+            width: 100px;
+        }
+        ion-col{
+            &.active{
+                span{
+                    font-size: 20px;
+                    color: $greenColor;
+                    font-weight: 600;
+                    border-bottom: 1px solid $greenColor;
+                }
+            }
+        }
+    }
+
+    .datePicker{
+        margin-top: 40px;
+    }
+
+    .done{
+        text-align: right;
+        margin-top: 20px;
+    }
+
+}

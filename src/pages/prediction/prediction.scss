@@ -1,0 +1,20 @@
+page-prediction {
+    .categoryList{
+        img{
+            height: 150px;
+            width: 150px;
+        }
+        .active{
+            background: #b2ffb7;
+        }
+    }
+
+
+    ion-fab{
+        bottom: 10px !important;
+        ion-icon{
+            font-size: 20px;
+        }
+    }
+
+}

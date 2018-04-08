@@ -1,0 +1,56 @@
+{
+    "expense": [{
+        "name": "Labour",
+        "subtypes" : [{
+            "name": "Male"
+        },{
+            "name": "Female"
+            }]
+        },{
+        "name": "Material",
+        "subtypes" : [{
+            "name": "Fertilizers"
+        },{
+            "name": "seeds"
+        },{
+            "name": "Saplings"
+        },{
+            "name": "Pesticides"
+        }]
+    },{
+        "name": "Utility",
+        "subtypes" : [{
+            "name": "Water"
+        },{
+            "name": "Electricity"
+        }]
+    },{
+        "name": "Machinery",
+        "subtypes" : [{
+            "name": "tractor"
+        },{
+            "name": "Pump"
+        }]
+    }],
+    "income": [{
+        "name": "Rent",
+        "subtypes": [{
+            "name": "Warehouse"
+        },{
+            "name": "Land"
+        },{
+            "name": "tractor"
+        },{
+            "name": "Pump"
+        },{
+            "name": "Labour"
+        }]
+    },{
+        "name": "Sell",
+        "subtypes": [{
+            "name": "Cotton"
+        },{
+            "name": "CottonSeed"
+        }]
+    }]
+}

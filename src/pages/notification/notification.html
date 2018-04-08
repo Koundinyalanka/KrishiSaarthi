@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notification</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row *ngFor="let data of list" class="list-row">
+    <span>There is a new requirement of </span>
+    <span class="name" (click)="showData(data)">{{data.Resource_Type}}</span>
+  </ion-row>
+</ion-content>
