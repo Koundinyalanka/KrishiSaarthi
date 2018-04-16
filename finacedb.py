@@ -428,6 +428,7 @@ def AddNotification(json_String):
         longitude = float(json_Object["Longitude"]);
     
 #     print(type(json_Object["Start_Date"]))
+
     
     if ( ("Start_Date" not in json_String) or (str(json_Object["Start_Date"]) == '')):
         start_Date = 'NULL';
