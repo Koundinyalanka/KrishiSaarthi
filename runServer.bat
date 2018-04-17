@@ -1,2 +1,0 @@
-python transfer_learning_web_service.py
-pause
